@@ -7,10 +7,6 @@ const PORT = process.env.PORT || 9000;
 
 const server = http.createServer(app);
 
-app.get('/', (req, res) => {
-  res.send('PeerJS Server Running!');
-});
-
 const peerServer = ExpressPeerServer(server, {
   allow_discovery: true,
   key: 'peerjs',
@@ -27,5 +23,5 @@ peerServer.on('disconnect', (client) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Server on port ${PORT}`);
+  console.log('PeerJS server running on port ' + PORT);
 });
