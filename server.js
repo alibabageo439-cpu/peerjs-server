@@ -25,3 +25,8 @@ peerServer.on('disconnect', (client) => {
 server.listen(PORT, () => {
   console.log('PeerJS server running on port ' + PORT);
 });
+
+// Keep alive - server jaagna band nahi karega!
+setInterval(() => {
+  console.log('alive');
+}, 240000);
